@@ -29,16 +29,16 @@ class _MainMenuState extends State<MainMenu> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.add_circle),
-              label: 'Add Data',
-              backgroundColor: Colors.blue),
+              label: 'Add Ads',
+              backgroundColor: Colors.orange),
           BottomNavigationBarItem(
               icon: Icon(Icons.list),
-              label: 'List Data',
-              backgroundColor: Colors.cyan),
+              label: ' Ads List',
+              backgroundColor: Colors.orange),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
-              label: 'My Account',
-              backgroundColor: Colors.amber),
+              label: 'Admin Information',
+              backgroundColor: Colors.orange),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.cyan,

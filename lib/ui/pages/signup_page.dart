@@ -93,7 +93,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               ctrlEmail.text, ctrlPassword.text, ctrlName.text);
                           if (result == "success") {
                             Fluttertoast.showToast(
-                              msg: "Sign Up iz a Success",
+                              msg: "Sign Up Success",
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.BOTTOM,
                               backgroundColor: Colors.green,

@@ -2,7 +2,7 @@ part of 'services.dart';
 
 class UserServices {
   static CollectionReference userCollection =
-      FirebaseFirestore.instance.collection("users");
+      FirebaseFirestore.instance.collection("Admin");
   static DocumentReference userDoc;
   static Reference ref;
   static UploadTask uploadTask;

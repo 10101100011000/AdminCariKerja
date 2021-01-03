@@ -7,19 +7,19 @@ class AddPage extends StatefulWidget {
 
 class _AddPageState extends State<AddPage> {
   final ctrlName = TextEditingController();
-  final ctrlPrice = TextEditingController();
+  final ctrlDesc = TextEditingController();
   bool isLoading = false;
 
   @override
   void dispose() {
     ctrlName.dispose();
-    ctrlPrice.dispose();
+    ctrlDesc.dispose();
     super.dispose();
   }
 
   void clearForm() {
     ctrlName.clear();
-    ctrlPrice.clear();
+    ctrlDesc.clear();
     setState(() {
       imageFile = null;
     });
@@ -62,12 +62,11 @@ class _AddPageState extends State<AddPage> {
                     ),
                     SizedBox(height: 20),
                     TextFormField(
-                      keyboardType: TextInputType.number,
-                      controller: ctrlPrice,
+                      controller: ctrlDesc,
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.attach_money_rounded),
-                          labelText: 'Price',
-                          hintText: "Write product's price",
+                          labelText: 'Descriptionn',
+                          hintText: "Write the ads description",
                           border: OutlineInputBorder()),
                     ),
                     SizedBox(height: 20),
@@ -108,7 +107,7 @@ class _AddPageState extends State<AddPage> {
                       child: Text("Add Product"),
                       onPressed: () async {
                         if (ctrlName.text == "" ||
-                            ctrlPrice.text == "" ||
+                            ctrlDesc.text == "" ||
                             imageFile == null) {
                           Fluttertoast.showToast(
                             msg: "Please fill all fields !",
@@ -123,7 +122,7 @@ class _AddPageState extends State<AddPage> {
                             isLoading = true;
                           });
                           Products product =
-                              Products("", ctrlName.text, ctrlPrice.text, "");
+                              Products("", ctrlName.text, ctrlDesc.text, "");
                           bool result = await ProductServices.addProduct(
                               product, imageFile);
                           if (result == true) {

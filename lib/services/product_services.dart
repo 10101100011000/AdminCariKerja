@@ -16,8 +16,8 @@ class ProductServices {
     await Firebase.initializeApp();
     productDoc = await productCollection.add({
       'id': "",
-      'name': product.name,
-      'price': product.price,
+      'name': product.ads,
+      'description': product.description,
       'image': "",
     });
 
@@ -47,8 +47,8 @@ class ProductServices {
 
     await productCollection.doc(product.id).update(
       {
-        'name': product.name,
-        'price': product.price,
+        'name': product.ads,
+        'description': product.description,
       },
     );
 
