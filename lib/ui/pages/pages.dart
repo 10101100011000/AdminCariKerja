@@ -16,5 +16,5 @@ part 'signup_page.dart';
 part 'mainmenu.dart';
 part 'ads_add.dart';
 part 'ads_list.dart';
-part 'account_page.dart';
+part 'admin.dart';
 part 'edit_page.dart';

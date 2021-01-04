@@ -40,6 +40,7 @@ class _AddPageState extends State<AddPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add Data"),
+        backgroundColor: Color(0xFFEEA20F),
         centerTitle: true,
         leading: Container(),
       ),
@@ -52,24 +53,6 @@ class _AddPageState extends State<AddPage> {
                 Column(
                   children: [
                     SizedBox(height: 10),
-                    TextFormField(
-                      controller: ctrlName,
-                      decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.add_box_rounded),
-                          labelText: 'Ads Name',
-                          hintText: "Write your Product Name",
-                          border: OutlineInputBorder()),
-                    ),
-                    SizedBox(height: 20),
-                    TextFormField(
-                      controller: ctrlDesc,
-                      decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.description_rounded),
-                          labelText: 'Description',
-                          hintText: "Write the ads description",
-                          border: OutlineInputBorder()),
-                    ),
-                    SizedBox(height: 20),
                     imageFile == null
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,10 +82,30 @@ class _AddPageState extends State<AddPage> {
                               ))
                             ],
                           ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 20),
+                    TextFormField(
+                      controller: ctrlName,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.add_box_rounded),
+                          labelText: 'Ads Name',
+                          hintText: "Write your Product Name",
+                          border: OutlineInputBorder()),
+                    ),
+                    SizedBox(height: 20),
+                    TextFormField(
+                      controller: ctrlDesc,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.description_rounded),
+                          labelText: 'Description',
+                          hintText: "Write the ads description",
+                          border: OutlineInputBorder()),
+                    ),
+                    SizedBox(
+                      child: Padding(padding: EdgeInsets.only(bottom: 250)),
+                    ),
                     RaisedButton(
                       padding: EdgeInsets.all(20),
-                      color: Colors.teal,
+                      color: Colors.blue,
                       textColor: Colors.white,
                       child: Text("Add Product"),
                       onPressed: () async {

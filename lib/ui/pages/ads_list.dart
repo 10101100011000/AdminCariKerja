@@ -14,7 +14,7 @@ class _DataPageState extends State<DataPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Data"),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Color(0xFFEEA20F),
         centerTitle: true,
         leading: Container(),
       ),
