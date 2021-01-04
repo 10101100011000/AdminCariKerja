@@ -20,13 +20,13 @@ class ProductCard extends StatelessWidget {
                   )));
         },
         title: Text(
-          product.ads,
+          product.ads ?? '',
           style: TextStyle(fontSize: 20),
         ),
-        subtitle: Text(product.description),
+        subtitle: Text(product.description ?? ''),
         leading: CircleAvatar(
           backgroundColor: Colors.white,
-          backgroundImage: NetworkImage(product.image, scale: 40),
+          backgroundImage: NetworkImage(product.image ?? '', scale: 40),
         ),
         trailing: IconButton(
           icon: Icon(Icons.remove_red_eye, color: Colors.grey),

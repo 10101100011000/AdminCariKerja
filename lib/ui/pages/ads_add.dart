@@ -55,8 +55,8 @@ class _AddPageState extends State<AddPage> {
                     TextFormField(
                       controller: ctrlName,
                       decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.account_tree_rounded),
-                          labelText: 'Product Name',
+                          prefixIcon: Icon(Icons.add_box_rounded),
+                          labelText: 'Ads Name',
                           hintText: "Write your Product Name",
                           border: OutlineInputBorder()),
                     ),
@@ -64,8 +64,8 @@ class _AddPageState extends State<AddPage> {
                     TextFormField(
                       controller: ctrlDesc,
                       decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.attach_money_rounded),
-                          labelText: 'Descriptionn',
+                          prefixIcon: Icon(Icons.description_rounded),
+                          labelText: 'Description',
                           hintText: "Write the ads description",
                           border: OutlineInputBorder()),
                     ),
@@ -101,9 +101,9 @@ class _AddPageState extends State<AddPage> {
                           ),
                     SizedBox(height: 40),
                     RaisedButton(
+                      padding: EdgeInsets.all(20),
                       color: Colors.teal,
                       textColor: Colors.white,
-                      padding: EdgeInsets.all(15),
                       child: Text("Add Product"),
                       onPressed: () async {
                         if (ctrlName.text == "" ||

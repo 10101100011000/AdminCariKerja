@@ -53,7 +53,7 @@ class _EditPageState extends State<EditPage> {
                           TextEditingController(text: widget.product.ads),
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.edit),
-                        labelText: 'Product Name',
+                        labelText: 'Ads Name',
                         hintText: 'Write your new product name',
                         border: OutlineInputBorder(),
                       ),
@@ -62,11 +62,10 @@ class _EditPageState extends State<EditPage> {
                     TextFormField(
                       controller: ctrlPrice = TextEditingController(
                           text: widget.product.description),
-                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.attach_money),
-                        labelText: 'Price',
-                        hintText: "Write new product's price",
+                        labelText: 'Description',
+                        hintText: "Write new the ads description",
                         border: OutlineInputBorder(),
                       ),
                     ),

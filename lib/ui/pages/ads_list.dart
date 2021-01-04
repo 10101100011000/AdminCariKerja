@@ -40,8 +40,8 @@ class _DataPageState extends State<DataPage> {
                   return ListView(
                     children: snapshot.data.docs.map((DocumentSnapshot doc) {
                       return ProductCard(
-                        product: Products(doc.data()['id'], doc.data()['ads'],
-                            doc.data()['price'], doc.data()['image']),
+                        product: Products(doc.data()['id'], doc.data()['name'],
+                            doc.data()['description'], doc.data()['image']),
                       );
                     }).toList(),
                   );
