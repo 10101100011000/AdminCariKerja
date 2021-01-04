@@ -48,11 +48,17 @@ class _EditPageState extends State<EditPage> {
                 Column(
                   children: [
                     SizedBox(height: 10),
+                    Container(
+                        child: Image.network(
+                      widget.product.image,
+                      scale: 4,
+                    )),
+                    SizedBox(height: 20),
                     TextFormField(
                       controller: ctrlName =
                           TextEditingController(text: widget.product.ads),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.edit),
+                        prefixIcon: Icon(Icons.add_box_rounded),
                         labelText: 'Ads Name',
                         hintText: 'Write your new product name',
                         border: OutlineInputBorder(),
@@ -63,24 +69,19 @@ class _EditPageState extends State<EditPage> {
                       controller: ctrlPrice = TextEditingController(
                           text: widget.product.description),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.attach_money),
+                        prefixIcon: Icon(Icons.add_box_rounded),
                         labelText: 'Description',
                         hintText: "Write new the ads description",
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Container(
-                        child: Image.network(
-                      widget.product.image,
-                      scale: 4,
-                    )),
-                    SizedBox(height: 20),
+                    SizedBox(height: 250),
+                    // SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         RaisedButton(
-                          color: Colors.yellow[400],
+                          color: Colors.greenAccent,
                           textColor: Colors.black,
                           padding: EdgeInsets.all(15),
                           child: Text("Update Product"),
