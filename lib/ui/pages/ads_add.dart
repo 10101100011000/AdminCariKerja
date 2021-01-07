@@ -88,7 +88,7 @@ class _AddPageState extends State<AddPage> {
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.add_box_rounded),
                           labelText: 'Ads Name',
-                          hintText: "Write your Product Name",
+                          hintText: "Write your Ads Name",
                           border: OutlineInputBorder()),
                     ),
                     SizedBox(height: 20),
@@ -107,7 +107,7 @@ class _AddPageState extends State<AddPage> {
                       padding: EdgeInsets.all(20),
                       color: Colors.blue,
                       textColor: Colors.white,
-                      child: Text("Add Product"),
+                      child: Text("Add Ads"),
                       onPressed: () async {
                         if (ctrlName.text == "" ||
                             ctrlDesc.text == "" ||
@@ -124,13 +124,13 @@ class _AddPageState extends State<AddPage> {
                           setState(() {
                             isLoading = true;
                           });
-                          Products product =
-                              Products("", ctrlName.text, ctrlDesc.text, "");
-                          bool result = await ProductServices.addProduct(
-                              product, imageFile);
+                          Ads ads =
+                              Ads("", ctrlName.text, ctrlDesc.text, "");
+                          bool result = await AdsServices.addads(
+                              ads, imageFile);
                           if (result == true) {
                             Fluttertoast.showToast(
-                              msg: "Add Product Successful.",
+                              msg: "Add Ads Successful.",
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.BOTTOM,
                               backgroundColor: Colors.green,

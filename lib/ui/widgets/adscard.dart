@@ -3,9 +3,9 @@ import 'package:bloc_practice/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ProductCard extends StatelessWidget {
-  final Products product;
-  ProductCard({this.product});
+class AdsCard extends StatelessWidget {
+  final Ads ads;
+  AdsCard({this.ads});
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +16,17 @@ class ProductCard extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => EditPage(
-                    product: product,
+                    ads: ads,
                   )));
         },
         title: Text(
-          product.ads ?? '',
+          ads.ads ?? '',
           style: TextStyle(fontSize: 20),
         ),
-        subtitle: Text(product.description ?? ''),
+        subtitle: Text(ads.description ?? ''),
         leading: CircleAvatar(
           backgroundColor: Colors.white,
-          backgroundImage: NetworkImage(product.image ?? '', scale: 40),
+          backgroundImage: NetworkImage(ads.image ?? '', scale: 40),
         ),
         trailing: IconButton(
           icon: Icon(Icons.remove_red_eye, color: Colors.grey),

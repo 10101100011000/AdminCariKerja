@@ -9,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:bloc_practice/ui/widgets/productcard.dart';
+import 'package:bloc_practice/ui/widgets/adscard.dart';
+
+import '../../models/models.dart';
 
 part 'signin_page.dart';
 part 'signup_page.dart';

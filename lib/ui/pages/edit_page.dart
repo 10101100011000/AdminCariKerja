@@ -1,8 +1,8 @@
 part of 'pages.dart';
 
 class EditPage extends StatefulWidget {
-  EditPage({this.product});
-  final Products product;
+  EditPage({this.ads});
+  final Ads ads;
 
   @override
   _EditPageState createState() => _EditPageState();
@@ -50,24 +50,24 @@ class _EditPageState extends State<EditPage> {
                     SizedBox(height: 10),
                     Container(
                         child: Image.network(
-                      widget.product.image,
+                      widget.ads.image,
                       scale: 4,
                     )),
                     SizedBox(height: 20),
                     TextFormField(
                       controller: ctrlName =
-                          TextEditingController(text: widget.product.ads),
+                          TextEditingController(text: widget.ads.ads),
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.add_box_rounded),
                         labelText: 'Ads Name',
-                        hintText: 'Write your new product name',
+                        hintText: 'Write your new ads name',
                         border: OutlineInputBorder(),
                       ),
                     ),
                     SizedBox(height: 20),
                     TextFormField(
                       controller: ctrlPrice = TextEditingController(
-                          text: widget.product.description),
+                          text: widget.ads.description),
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.add_box_rounded),
                         labelText: 'Description',
@@ -84,10 +84,10 @@ class _EditPageState extends State<EditPage> {
                           color: Colors.greenAccent,
                           textColor: Colors.black,
                           padding: EdgeInsets.all(15),
-                          child: Text("Update Product"),
+                          child: Text("Update Ads"),
                           onPressed: () async {
                             ctrlId =
-                                TextEditingController(text: widget.product.id);
+                                TextEditingController(text: widget.ads.id);
                             if (ctrlName.text == "" || ctrlPrice.text == "") {
                               Fluttertoast.showToast(
                                 msg: "Please fill all fields!",
@@ -101,13 +101,13 @@ class _EditPageState extends State<EditPage> {
                               setState(() {
                                 isLoading = true;
                               });
-                              Products product = Products(ctrlId.text,
+                              Ads ads = Ads(ctrlId.text,
                                   ctrlName.text, ctrlPrice.text, "");
                               bool result =
-                                  await ProductServices.editProduct(product);
+                                  await AdsServices.editads(ads);
                               if (result == true) {
                                 Fluttertoast.showToast(
-                                  msg: "Add product succesful!",
+                                  msg: "Add ads succesful!",
                                   toastLength: Toast.LENGTH_SHORT,
                                   gravity: ToastGravity.BOTTOM,
                                   backgroundColor: Colors.green,
@@ -139,10 +139,10 @@ class _EditPageState extends State<EditPage> {
                           color: Colors.red[300],
                           textColor: Colors.white,
                           padding: EdgeInsets.all(15),
-                          child: Text("Delete Product"),
+                          child: Text("Delete Ads"),
                           onPressed: () {
                             ctrlId =
-                                TextEditingController(text: widget.product.id);
+                                TextEditingController(text: widget.ads.id);
                             showDialog(
                                 context: context,
                                 // ignore: non_constant_identifier_names
@@ -158,10 +158,10 @@ class _EditPageState extends State<EditPage> {
                                           setState(() {
                                             isLoading = true;
                                           });
-                                          Products product =
-                                              Products(ctrlId.text, "", "", "");
-                                          bool result = await ProductServices
-                                              .deleteProduct(product);
+                                          Ads ads =
+                                              Ads(ctrlId.text, "", "", "");
+                                          bool result = await AdsServices
+                                              .deleteads(ads);
                                           if (result == true) {
                                             Fluttertoast.showToast(
                                               msg: "Delete product succesful!",

@@ -6,8 +6,8 @@ class DataPage extends StatefulWidget {
 }
 
 class _DataPageState extends State<DataPage> {
-  CollectionReference productCollection =
-      FirebaseFirestore.instance.collection("products");
+  CollectionReference adsCollection =
+      FirebaseFirestore.instance.collection("ads");
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,11 @@ class _DataPageState extends State<DataPage> {
             width: double.infinity,
             height: double.infinity,
             child: StreamBuilder<QuerySnapshot>(
-                stream: productCollection.snapshots(),
+                stream: adsCollection.snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
                   if (snapshot.hasError) {
-                    return Text("Failed to get products info!");
+                    return Text("Failed to get ads info!");
                   }
 
                   if (snapshot.connectionState == ConnectionState.waiting) {
@@ -39,8 +39,8 @@ class _DataPageState extends State<DataPage> {
                   }
                   return ListView(
                     children: snapshot.data.docs.map((DocumentSnapshot doc) {
-                      return ProductCard(
-                        product: Products(doc.data()['id'], doc.data()['name'],
+                      return AdsCard(
+                        ads: Ads(doc.data()['id'], doc.data()['name'],
                             doc.data()['description'], doc.data()['image']),
                       );
                     }).toList(),
