@@ -8,18 +8,21 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   final ctrlName = TextEditingController();
   final ctrlDesc = TextEditingController();
+  final ctrlLink = TextEditingController();
   bool isLoading = false;
 
   @override
   void dispose() {
     ctrlName.dispose();
     ctrlDesc.dispose();
+    ctrlLink.dispose();
     super.dispose();
   }
 
   void clearForm() {
     ctrlName.clear();
     ctrlDesc.clear();
+    ctrlLink.clear();
     setState(() {
       imageFile = null;
     });
@@ -100,6 +103,15 @@ class _AddPageState extends State<AddPage> {
                           hintText: "Write the ads description",
                           border: OutlineInputBorder()),
                     ),
+                    SizedBox(height: 20),
+                    TextFormField(
+                      controller: ctrlLink,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.description_rounded),
+                          labelText: 'Link',
+                          hintText: "Write the ads link",
+                          border: OutlineInputBorder()),
+                    ),
                     SizedBox(
                       child: Padding(padding: EdgeInsets.only(bottom: 250)),
                     ),
@@ -125,7 +137,7 @@ class _AddPageState extends State<AddPage> {
                             isLoading = true;
                           });
                           Ads ads =
-                              Ads("", ctrlName.text, ctrlDesc.text, "");
+                              Ads("", ctrlName.text, ctrlDesc.text, ctrlLink.text, "");
                           bool result = await AdsServices.addads(
                               ads, imageFile);
                           if (result == true) {

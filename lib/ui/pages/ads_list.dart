@@ -7,7 +7,7 @@ class DataPage extends StatefulWidget {
 
 class _DataPageState extends State<DataPage> {
   CollectionReference adsCollection =
-      FirebaseFirestore.instance.collection("ads");
+      FirebaseFirestore.instance.collection("adss");
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class _DataPageState extends State<DataPage> {
                     children: snapshot.data.docs.map((DocumentSnapshot doc) {
                       return AdsCard(
                         ads: Ads(doc.data()['id'], doc.data()['name'],
-                            doc.data()['description'], doc.data()['image']),
+                            doc.data()['description'], doc.data()['link'], doc.data()['image']),
                       );
                     }).toList(),
                   );

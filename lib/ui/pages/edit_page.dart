@@ -11,9 +11,11 @@ class EditPage extends StatefulWidget {
 class _EditPageState extends State<EditPage> {
   TextEditingController controllerName;
   TextEditingController controllerPrice;
+  TextEditingController controllerLink;
 
   var ctrlName = TextEditingController();
   var ctrlPrice = TextEditingController();
+  var ctrlLink = TextEditingController();
   var ctrlId = TextEditingController();
 
   bool isLoading;
@@ -75,6 +77,17 @@ class _EditPageState extends State<EditPage> {
                         border: OutlineInputBorder(),
                       ),
                     ),
+                    SizedBox(height: 20),
+                    TextFormField(
+                      controller: ctrlLink = TextEditingController(
+                          text: widget.ads.link),
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.add_box_rounded),
+                        labelText: 'Link',
+                        hintText: "Write new the ads link",
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
                     SizedBox(height: 250),
                     // SizedBox(height: 20),
                     Row(
@@ -102,7 +115,7 @@ class _EditPageState extends State<EditPage> {
                                 isLoading = true;
                               });
                               Ads ads = Ads(ctrlId.text,
-                                  ctrlName.text, ctrlPrice.text, "");
+                                  ctrlName.text, ctrlPrice.text, ctrlLink.text, "");
                               bool result =
                                   await AdsServices.editads(ads);
                               if (result == true) {
@@ -159,7 +172,7 @@ class _EditPageState extends State<EditPage> {
                                             isLoading = true;
                                           });
                                           Ads ads =
-                                              Ads(ctrlId.text, "", "", "");
+                                              Ads(ctrlId.text, "", "", "", "");
                                           bool result = await AdsServices
                                               .deleteads(ads);
                                           if (result == true) {

@@ -18,6 +18,7 @@ class AdsServices {
       'id': "",
       'name': ads.ads,
       'description': ads.description,
+      'link': ads.link,
       'image': "",
     });
 
@@ -49,6 +50,7 @@ class AdsServices {
       {
         'name': ads.ads,
         'description': ads.description,
+        'link': ads.link
       },
     );
 
