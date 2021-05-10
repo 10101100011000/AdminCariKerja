@@ -14,7 +14,7 @@ class AuthServices {
       Users users = result.user.convertToUser(name: name);
       auth.signOut();
       await UserServices.updateUser(users);
-      msg = "Success, let's login";
+      msg = "Success, Have Fun!!!";
     } catch (e) {
       msg = e.toString();
     }

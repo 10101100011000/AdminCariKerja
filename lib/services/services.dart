@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:bloc_practice/extensions/extensions.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:bloc_practice/models/recipt.dart';
 part 'auth_services.dart';
 part 'user_services.dart';
 part 'ads_services.dart';

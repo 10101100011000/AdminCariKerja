@@ -108,18 +108,18 @@ class _SignInPageState extends State<SignInPage> {
                       },
                     ),
                     SizedBox(height: 25),
-                    // RichText(
-                    //   text: TextSpan(
-                    //       text: 'Not registered yet? Sign Up.',
-                    //       style: TextStyle(color: Colors.blue),
-                    //       recognizer: TapGestureRecognizer()
-                    //         ..onTap = () {
-                    //           Navigator.pushReplacement(context,
-                    //               MaterialPageRoute(builder: (context) {
-                    //             return SignUpPage();
-                    //           }));
-                    //         }),
-                    // ),
+                    RichText(
+                      text: TextSpan(
+                          text: 'Not registered yet? Sign Up.',
+                          style: TextStyle(color: Colors.blue),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushReplacement(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return SignUpPage();
+                              }));
+                            }),
+                    ),
                   ],
                 ),
               ],
