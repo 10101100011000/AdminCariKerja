@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'models.dart';
 
 class Recipt extends Equatable {
   final String id;
@@ -9,20 +9,8 @@ class Recipt extends Equatable {
   final String imageH;
 
   Recipt(
-      this.id,
-      this.judul,
-      this.owner,
-      this.highlight,
-      this.code,
-      this.imageH);
+      this.id, this.judul, this.owner, this.highlight, this.code, this.imageH);
 
   @override
-  List<Object> get props => [
-        id,
-        judul,
-        owner,
-        highlight,
-        code,
-        imageH
-      ];
+  List<Object> get props => [id, judul, owner, highlight, code, imageH];
 }

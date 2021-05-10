@@ -1,7 +1,8 @@
 part of 'pages.dart';
 
 class ReciptPage extends StatefulWidget {
-  ReciptPage({Key key}) : super(key: key);
+  ReciptPage({this.recipt});
+  final Recipt recipt;
 
   @override
   _ReciptPageState createState() => _ReciptPageState();
@@ -23,35 +24,26 @@ class _ReciptPageState extends State<ReciptPage> {
       body: Stack(
         children: [
           Container(
-            width: double.infinity,
-            height: double.infinity,
-            child: StreamBuilder<QuerySnapshot>(
-                stream: adsCollection.snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasError) {
-                    return Text("Failed to get ads info!");
-                  }
-
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return SpinKitFadingCircle(
-                      size: 50,
-                      color: Colors.cyan,
-                    );
-                  }
-                  return ListView(
-                    children: snapshot.data.docs.map((DocumentSnapshot doc) {
-                      return AdsCard(
-                        ads: Ads(
-                            doc.data()['id'],
-                            doc.data()['name'],
-                            doc.data()['description'],
-                            doc.data()['link'],
-                            doc.data()['image']),
-                      );
-                    }).toList(),
-                  );
-                }),
+            alignment: Alignment.topCenter,
+            margin: EdgeInsets.only(top: 45),
+            child: Text(
+              widget.recipt.judul,
+              style: TextStyle(
+                  color: Colors.black, fontFamily: 'saira', fontSize: 25),
+            ),
+          ),
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(top: 20),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: NetworkImage(widget.recipt.imageH),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white),
+              width: 270,
+              height: 270,
+            ),
           ),
         ],
       ),

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:bloc_practice/models/models.dart';
 import 'package:bloc_practice/services/services.dart';
+import 'package:bloc_practice/ui/widgets/highlightCard.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';

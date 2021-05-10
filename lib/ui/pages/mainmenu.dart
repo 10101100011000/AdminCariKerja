@@ -11,7 +11,7 @@ class _MainMenuState extends State<MainMenu> {
     AddPage(),
     DataPage(),
     AccountPage(),
-    ReciptPage()
+    ReceiptPageMy()
   ];
 
   void _onItemTapped(int index) {
