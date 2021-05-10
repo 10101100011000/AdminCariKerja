@@ -20,3 +20,5 @@ part 'ads_add.dart';
 part 'ads_list.dart';
 part 'admin.dart';
 part 'edit_page.dart';
+part 'recipt_page.dart';
+part 'detail_recipt_page.dart';

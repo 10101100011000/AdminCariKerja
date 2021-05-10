@@ -26,7 +26,7 @@ class AdsCard extends StatelessWidget {
         subtitle: Text(ads.description ?? ''),
         leading: CircleAvatar(
           backgroundColor: Colors.white,
-          backgroundImage: NetworkImage(ads.image ?? '', scale: 40),
+          backgroundImage: NetworkImage(ads.image ?? ''),
         ),
         trailing: IconButton(
           icon: Icon(Icons.remove_red_eye, color: Colors.grey),

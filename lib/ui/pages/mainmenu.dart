@@ -10,7 +10,8 @@ class _MainMenuState extends State<MainMenu> {
   static List<Widget> _widgetOptions = <Widget>[
     AddPage(),
     DataPage(),
-    AccountPage()
+    AccountPage(),
+    ReciptPage()
   ];
 
   void _onItemTapped(int index) {
@@ -38,6 +39,10 @@ class _MainMenuState extends State<MainMenu> {
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
               label: 'Admin Information',
+              backgroundColor: Colors.orange),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.receipt),
+              label: 'Recipts',
               backgroundColor: Colors.orange),
         ],
         currentIndex: _selectedIndex,
