@@ -45,6 +45,39 @@ class _ReciptPageState extends State<ReciptPage> {
               height: 270,
             ),
           ),
+          Center(
+            child: Container(
+              alignment: Alignment.bottomCenter,
+              child: Column(
+                children: [
+                  Container(
+                    child: Container(
+                      child: Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                width: 85,
+                                height: 85,
+                                child: FloatingActionButton(
+                                  backgroundColor: Colors.white,
+                                  onPressed: () {},
+                                  child: Text('Highlight',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: 'saira',
+                                          fontSize: 15)),
+                                )),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
