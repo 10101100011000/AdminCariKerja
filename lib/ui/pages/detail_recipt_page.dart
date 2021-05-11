@@ -11,6 +11,10 @@ class ReciptPage extends StatefulWidget {
 class _ReciptPageState extends State<ReciptPage> {
   CollectionReference adsCollection =
       FirebaseFirestore.instance.collection("adss");
+  var ctrlId = TextEditingController();
+  var hlcode = TextEditingController();
+
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +66,55 @@ class _ReciptPageState extends State<ReciptPage> {
                                 height: 85,
                                 child: FloatingActionButton(
                                   backgroundColor: Colors.white,
-                                  onPressed: () {},
+                                  onPressed: () async {
+                                    ctrlId = TextEditingController(
+                                        text: widget.recipt.id);
+                                    if (hlcode == "") {
+                                      Fluttertoast.showToast(
+                                        msg: "Please fill all fields!",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        gravity: ToastGravity.BOTTOM,
+                                        backgroundColor: Colors.red,
+                                        textColor: Colors.white,
+                                        fontSize: 16.0,
+                                      );
+                                    } else {
+                                      setState(() {
+                                        isLoading = true;
+                                      });
+                                      Recipt product = Recipt(ctrlId.text, '',
+                                          '', '', hlcode.text, '');
+                                      bool result = await HighlightServices
+                                          .highlightJobList(product);
+                                      if (result == true) {
+                                        Fluttertoast.showToast(
+                                          msg:
+                                              "Highlight request has been sent",
+                                          toastLength: Toast.LENGTH_SHORT,
+                                          gravity: ToastGravity.BOTTOM,
+                                          backgroundColor: Colors.green,
+                                          textColor: Colors.white,
+                                          fontSize: 16.0,
+                                        );
+                                        setState(() {
+                                          isLoading = false;
+                                        });
+                                        Navigator.pop(context);
+                                      } else {
+                                        Fluttertoast.showToast(
+                                          msg: "Failed! Try again",
+                                          toastLength: Toast.LENGTH_SHORT,
+                                          gravity: ToastGravity.BOTTOM,
+                                          backgroundColor: Colors.red,
+                                          textColor: Colors.white,
+                                          fontSize: 16.0,
+                                        );
+                                        setState(() {
+                                          isLoading = false;
+                                        });
+                                      }
+                                    }
+                                  },
                                   child: Text('Highlight',
                                       style: TextStyle(
                                           color: Colors.black,
